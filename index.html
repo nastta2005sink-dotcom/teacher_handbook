@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Teacher's Companion | Handbook for Future English Teachers</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(145deg, #fff9f5 0%, #ffe9e6 100%);
+            font-family: 'Segoe UI', 'Poppins', system-ui, -apple-system, sans-serif;
+            color: #5a3e3a;
+            padding: 30px 20px;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        /* Header with teacher image */
+        .hero {
+            background: #ffffffcc;
+            backdrop-filter: blur(8px);
+            border-radius: 64px;
+            padding: 30px;
+            margin-bottom: 40px;
+            text-align: center;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.05);
+            border: 1px solid #ffdbd4;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .teacher-img {
+            font-size: 120px;
+            background: #ffe0da;
+            border-radius: 100%;
+            padding: 20px;
+            display: inline-block;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .hero-text h1 {
+            font-size: 2.2rem;
+            color: #c26b5e;
+            margin-bottom: 10px;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            max-width: 500px;
+            color: #8b6b64;
+        }
+
+        /* Section grid */
+        .section-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        /* Cards */
+        .card {
+            background: #ffffffdd;
+            backdrop-filter: blur(4px);
+            border-radius: 48px;
+            padding: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            border: 1px solid #ffe0da;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px rgba(0,0,0,0.08);
+            background: white;
+        }
+
+        .card-header {
+            background: #fff0ec;
+            padding: 20px 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: #c26b5e;
+            transition: 0.2s;
+        }
+
+        .card-header:hover {
+            background: #ffe4dd;
+        }
+
+        .card-header .emoji {
+            font-size: 1.8rem;
+        }
+
+        .toggle-icon {
+            font-size: 1.5rem;
+            transition: 0.2s;
+        }
+
+        .card-content {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.3s;
+            background: #fffffffa;
+            border-top: 1px solid #ffe0da;
+        }
+
+        .card-content.show {
+            max-height: 2000px;
+            padding: 25px;
+        }
+
+        /* inner content style */
+        .card-content h4 {
+            color: #b95c4e;
+            margin: 15px 0 8px 0;
+            font-size: 1.1rem;
+        }
+
+        .card-content p, .card-content li {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: #5a403c;
+        }
+
+        .card-content ul, .card-content ol {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+
+        .card-content li {
+            margin: 6px 0;
+        }
+
+        .badge-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .badge {
+            background: #ffe0da;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            color: #b95c4e;
+            font-weight: 500;
+        }
+
+        hr {
+            margin: 15px 0;
+            border: none;
+            height: 1px;
+            background: #ffe0da;
+        }
+
+        /* Games section special */
+        .games-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 15px 0;
+        }
+
+        .game-link {
+            background: #f2e1dc;
+            padding: 8px 18px;
+            border-radius: 60px;
+            text-decoration: none;
+            color: #b85c4a;
+            font-weight: 500;
+            transition: 0.2s;
+            display: inline-block;
+        }
+
+        .game-link:hover {
+            background: #e8cbc3;
+            transform: scale(1.02);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            background: #ffffffaa;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: #b07a6e;
+        }
+
+        @media (max-width: 700px) {
+            .hero-text h1 { font-size: 1.6rem; }
+            .teacher-img { font-size: 80px; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- Hero section with teacher image -->
+    <div class="hero">
+        <div class="hero-content">
+            <div class="teacher-img">
+                🍎👩‍🏫
+            </div>
+            <div class="hero-text">
+                <h1>📘 Teacher's Companion</h1>
+                <p>Handbook for future English teachers — confidence, empathy, and ready-to-use tools.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Grid of collapsible sections -->
+    <div class="section-grid" id="sectionsGrid"></div>
+
+    <footer>
+        🌸 You've got this, future teacher! 🌸 <br>
+        Every expert was once a beginner. Keep learning, keep growing.
+    </footer>
+</div>
+
+<script>
+    // ---------- DATA BASED ON YOUR HANDBOOK ----------
+    const sectionsData = [
+        {
+            title: "🧑‍🏫 Who is a real teacher?",
+            emoji: "🧑‍🏫",
+            content: `
+                <p>A real teacher is not just someone who explains grammar. A real teacher is:</p>
+                <ul>
+                    <li><strong>Patient</strong> — explains the same rule 10 times without sighing</li>
+                    <li><strong>Flexible</strong> — changes the lesson plan in 2 minutes if something fails</li>
+                    <li><strong>Empathetic</strong> — remembers how it felt to be a student</li>
+                    <li><strong>Passionate</strong> — energy for English is contagious</li>
+                    <li><strong>Respectful</strong> — treats every student as a human, not a grade</li>
+                    <li><strong>Humorous</strong> — can laugh at their own mistakes</li>
+                    <li><strong>A lifelong learner</strong> — still improves teaching methods</li>
+                </ul>
+                <p>💡 <em>"A good teacher is not one who gives all the answers, but one who makes students want to find them themselves."</em></p>
+            `
+        },
+        {
+            title: "🗣️ Classroom expressions",
+            emoji: "🗣️",
+            content: `
+                <h4>📌 Starting the lesson</h4>
+                <p>“Good morning/afternoon, everyone!” • “Let's begin, please.” • “Take your seats.”</p>
+                <h4>📌 Giving instructions</h4>
+                <p>“Open your books to page ___.” • “Work in pairs / groups.” • “Listen carefully.” • “Raise your hand if you know.”</p>
+                <h4>📌 Checking understanding</h4>
+                <p>“Does anyone have any questions?” • “Is everything clear?” • “Can you repeat that in your own words?”</p>
+                <h4>📌 Managing the class & encouraging</h4>
+                <p>“Please be quiet.” • “Eyes on me.” • “Good job!” • “Excellent answer!” • “Don't worry, try again.”</p>
+                <h4>📌 Ending the lesson</h4>
+                <p>“Let's review what we learned.” • “Your homework is ___.” • “See you next time!”</p>
+            `
+        },
+        {
+            title: "🛡️ Stop bullying in class",
+            emoji: "🛡️",
+            content: `
+                <p><strong>Prevent it before it starts:</strong> set clear rules (“We respect everyone”), build positive culture, model respect.</p>
+                <p><strong>Recognize signs:</strong> sudden quietness, anxious behavior, hurtful “jokes”, isolation during group work.</p>
+                <p><strong>Intervene calmly:</strong> privately say “I noticed what you said. That wasn't kind.” Never humiliate in front of everyone.</p>
+                <p><strong>Support the victim:</strong> talk privately, ask “What would help you feel safer?” Involve parents and school administration if needed.</p>
+                <p>⚠️ <em>Never ignore bullying. Silence is agreement.</em></p>
+            `
+        },
+        {
+            title: "🧠 When emotions overwhelm you",
+            emoji: "🧠",
+            content: `
+                <h4>😰 Anxiety & insecurity – before the lesson</h4>
+                <p>“I'm not ready” → Nobody is 100% ready. “They won't listen” → start with strong voice. “I'll make a mistake” → say “Oops, let me correct that” – students respect honesty.</p>
+                <h4>🎤 Speaking in front of a large audience</h4>
+                <ul>
+                    <li>Practice out loud (first 2 minutes of lesson 5 times)</li>
+                    <li>Look at foreheads, not eyes – feels like eye contact</li>
+                    <li>Hold something (pen, remote) to calm hands</li>
+                    <li>Move around – walking reduces nervous energy</li>
+                </ul>
+                <h4>📈 Build confidence over time</h4>
+                <ul>
+                    <li>Prepare more than you think you need</li>
+                    <li>Record yourself – watch once, then delete</li>
+                    <li>Start with easier classes first</li>
+                    <li>Celebrate small wins: “Today nobody fell asleep”</li>
+                </ul>
+                <p>💪 <em>Confidence is not “I'm perfect”. Confidence is “I can handle whatever happens.”</em></p>
+            `
+        },
+        {
+            title: "🎲 Extra time? No-prep games",
+            emoji: "🎲",
+            content: `
+                <div class="badge-list"><span class="badge">20 Questions</span><span class="badge">Last Letter</span><span class="badge">Word Chain Story</span><span class="badge">Alphabet Game</span><span class="badge">Draw & Guess</span><span class="badge">Two Truths, One Lie</span><span class="badge">Stop the Bus</span></div>
+                <p><strong>How to play quickly:</strong></p>
+                <ul>
+                    <li><strong>20 Questions:</strong> teacher thinks of a word, students ask yes/no.</li>
+                    <li><strong>Last Letter:</strong> say a word, next student says word starting with last letter (apple → elephant).</li>
+                    <li><strong>Stop the Bus:</strong> grid with categories (Name, Food, Animal, Country). Pick a letter, first to fill all shouts “Stop the bus!”</li>
+                    <li><strong>Two Truths, One Lie:</strong> student says 3 statements, others guess the lie.</li>
+                </ul>
+                <p>🎯 <strong>Low-prep games:</strong> Hot Seat, Role Play, Find Someone Who, Running Dictation, Ball Toss Question, Four Corners.</p>
+            `
+        },
+        {
+            title: "🎮 Create your own games (websites)",
+            emoji: "🎮",
+            content: `
+                <p>You don't need to be a programmer. Use these free tools to make crosswords, word searches, bingo, and interactive quizzes for your English classroom:</p>
+                <div class="games-links">
+                    <a href="https://crosswordlabs.com/" target="_blank" class="game-link">🧩 Crossword Labs</a>
+                    <a href="https://worksheets.theteacherscorner.net/make-your-own/word-search/" target="_blank" class="game-link">🔍 Word Search Maker</a>
+                    <a href="https://www.educaplay.com/" target="_blank" class="game-link">🎮 Educaplay (crosswords, fill-in)</a>
+                    <a href="https://www.baamboozle.com/" target="_blank" class="game-link">🎲 Baamboozle (quiz games)</a>
+                    <a href="https://wordwall.net/" target="_blank" class="game-link">📌 Wordwall (match, maze, quiz)</a>
+                    <a href="https://www.flippity.net/" target="_blank" class="game-link">🃏 Flippity (bingo, flashcards, board games)</a>
+                    <a href="https://puzzel.org/" target="_blank" class="game-link">🧩 Puzzel.org (crossword, word search, jigsaw)</a>
+                </div>
+                <hr>
+                <p><strong>Bonus tips for games:</strong> Use Bingo with vocabulary, Snakes & Ladders with grammar questions, or Taboo cards for speaking practice. Keep a small printed list of 5 no-prep games in your bag for emergencies.</p>
+            `
+        },
+        {
+            title: "📦 Emergency kit + last words",
+            emoji: "📦",
+            content: `
+                <p><strong>Keep in your bag:</strong> water bottle (to pause), list of 5 no-prep games, small notebook for reflection, one printed short story, a small stress ball.</p>
+                <p>🌟 <em>“You will have bad lessons. You will have days when nothing works. Every experienced teacher started exactly where you are now — scared, excited, and unsure. The fact that you're reading this means you already care. And caring is the most important quality.”</em></p>
+                <p>💬 <strong>Remember:</strong> students don't see 90% of your anxiety. Only you feel it. Breathe, pause, and keep going.</p>
+            `
+        }
+    ];
+
+    // Build the grid dynamically
+    const gridContainer = document.getElementById("sectionsGrid");
+
+    function buildSections() {
+        sectionsData.forEach((section, idx) => {
+            const card = document.createElement("div");
+            card.className = "card";
+
+            const header = document.createElement("div");
+            header.className = "card-header";
+            header.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <span class="emoji">${section.emoji}</span>
+                    <span>${section.title}</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+            `;
+
+            const contentDiv = document.createElement("div");
+            contentDiv.className = "card-content";
+            contentDiv.innerHTML = section.content;
+
+            header.addEventListener("click", () => {
+                const isOpen = contentDiv.classList.contains("show");
+                // Close all other open sections? (optional, but better UX)
+                document.querySelectorAll(".card-content").forEach(cont => {
+                    if (cont !== contentDiv && cont.classList.contains("show")) {
+                        cont.classList.remove("show");
+                        const prevHeader = cont.previousElementSibling;
+                        if (prevHeader) prevHeader.querySelector(".toggle-icon").textContent = "▼";
+                    }
+                });
+                contentDiv.classList.toggle("show");
+                const icon = header.querySelector(".toggle-icon");
+                icon.textContent = contentDiv.classList.contains("show") ? "▲" : "▼";
+            });
+
+            card.appendChild(header);
+            card.appendChild(contentDiv);
+            gridContainer.appendChild(card);
+        });
+    }
+
+    buildSections();
+</script>
+</body>
+</html>
