@@ -15,21 +15,22 @@
             background: linear-gradient(145deg, #fff9f5 0%, #ffe9e6 100%);
             font-family: 'Segoe UI', 'Poppins', system-ui, -apple-system, sans-serif;
             color: #5a3e3a;
-            padding: 30px 20px;
+            padding: 20px;
+            min-height: 100vh;
         }
 
         .container {
-            max-width: 1300px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
-        /* Header with teacher image */
+        /* Hero section with teacher image */
         .hero {
             background: #ffffffcc;
             backdrop-filter: blur(8px);
             border-radius: 64px;
-            padding: 30px;
-            margin-bottom: 40px;
+            padding: 25px 30px;
+            margin-bottom: 30px;
             text-align: center;
             box-shadow: 0 12px 30px rgba(0,0,0,0.05);
             border: 1px solid #ffdbd4;
@@ -40,36 +41,62 @@
             flex-wrap: wrap;
             align-items: center;
             justify-content: center;
-            gap: 30px;
+            gap: 25px;
         }
 
         .teacher-img {
-            font-size: 120px;
-            background: #ffe0da;
+            width: 120px;
+            height: 120px;
             border-radius: 100%;
-            padding: 20px;
-            display: inline-block;
+            object-fit: cover;
+            background: #ffe0da;
+            padding: 5px;
             box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         }
 
         .hero-text h1 {
-            font-size: 2.2rem;
+            font-size: 2rem;
             color: #c26b5e;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .hero-text p {
-            font-size: 1.1rem;
+            font-size: 1rem;
             max-width: 500px;
             color: #8b6b64;
         }
 
-        /* Section grid */
+        /* Daily Affirmation Section */
+        .affirmation {
+            background: #fff0ec;
+            border-radius: 60px;
+            padding: 18px 25px;
+            margin-bottom: 35px;
+            text-align: center;
+            border: 1px solid #ffdbd4;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+
+        .affirmation h3 {
+            color: #c26b5e;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .affirmation p {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: #8b5a52;
+            font-weight: 500;
+        }
+
+        /* Section grid (menu) */
         .section-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 25px;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
 
         /* Cards */
@@ -81,6 +108,7 @@
             transition: all 0.3s ease;
             box-shadow: 0 8px 20px rgba(0,0,0,0.03);
             border: 1px solid #ffe0da;
+            cursor: pointer;
         }
 
         .card:hover {
@@ -92,62 +120,85 @@
         .card-header {
             background: #fff0ec;
             padding: 20px 25px;
-            cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
             font-weight: 700;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             color: #c26b5e;
-            transition: 0.2s;
         }
 
-        .card-header:hover {
-            background: #ffe4dd;
-        }
-
-        .card-header .emoji {
-            font-size: 1.8rem;
+        .card-header .emoji-img {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 50%;
         }
 
         .toggle-icon {
             font-size: 1.5rem;
+            color: #c26b5e;
+        }
+
+        /* Detail View (full screen mode) */
+        .detail-view {
+            background: #fffefa;
+            border-radius: 48px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+            border: 1px solid #ffdbd4;
+        }
+
+        .detail-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #ffe0da;
+        }
+
+        .detail-header h2 {
+            font-size: 1.8rem;
+            color: #c26b5e;
+        }
+
+        .back-btn {
+            background: #ffe0da;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 40px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            color: #c26b5e;
             transition: 0.2s;
         }
 
-        .card-content {
-            padding: 0 25px;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease-out, padding 0.3s;
-            background: #fffffffa;
-            border-top: 1px solid #ffe0da;
+        .back-btn:hover {
+            background: #ffd5cc;
         }
 
-        .card-content.show {
-            max-height: 3000px;
-            padding: 25px;
-        }
-
-        /* inner content style */
-        .card-content h4 {
-            color: #b95c4e;
-            margin: 20px 0 8px 0;
-            font-size: 1.1rem;
-        }
-
-        .card-content p, .card-content li {
-            font-size: 0.95rem;
-            line-height: 1.5;
+        .detail-content {
+            font-size: 1rem;
+            line-height: 1.6;
             color: #5a403c;
         }
 
-        .card-content ul, .card-content ol {
-            padding-left: 20px;
-            margin: 10px 0;
+        .detail-content h4 {
+            color: #b95c4e;
+            margin: 25px 0 10px 0;
+            font-size: 1.2rem;
         }
 
-        .card-content li {
+        .detail-content ul, .detail-content ol {
+            padding-left: 25px;
+            margin: 12px 0;
+        }
+
+        .detail-content li {
             margin: 8px 0;
         }
 
@@ -171,8 +222,31 @@
             background: #fff0ec;
             border-left: 4px solid #c26b5e;
             padding: 15px;
-            margin: 15px 0;
+            margin: 20px 0;
             border-radius: 20px;
+        }
+
+        .games-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 15px 0;
+        }
+
+        .game-link {
+            background: #f2e1dc;
+            padding: 8px 18px;
+            border-radius: 60px;
+            text-decoration: none;
+            color: #b85c4a;
+            font-weight: 500;
+            transition: 0.2s;
+            display: inline-block;
+        }
+
+        .game-link:hover {
+            background: #e8cbc3;
+            transform: scale(1.02);
         }
 
         .table-wrap {
@@ -199,61 +273,34 @@
             color: #b95c4e;
         }
 
-        hr {
-            margin: 15px 0;
-            border: none;
-            height: 1px;
-            background: #ffe0da;
-        }
-
-        .games-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin: 15px 0;
-        }
-
-        .game-link {
-            background: #f2e1dc;
-            padding: 8px 18px;
-            border-radius: 60px;
-            text-decoration: none;
-            color: #b85c4a;
-            font-weight: 500;
-            transition: 0.2s;
-            display: inline-block;
-        }
-
-        .game-link:hover {
-            background: #e8cbc3;
-            transform: scale(1.02);
+        .hidden {
+            display: none;
         }
 
         footer {
             text-align: center;
-            margin-top: 50px;
+            margin-top: 40px;
             padding: 20px;
             background: #ffffffaa;
             border-radius: 50px;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: #b07a6e;
         }
 
         @media (max-width: 700px) {
-            .hero-text h1 { font-size: 1.6rem; }
-            .teacher-img { font-size: 80px; }
+            .teacher-img { width: 80px; height: 80px; }
+            .hero-text h1 { font-size: 1.4rem; }
+            .detail-header h2 { font-size: 1.4rem; }
             .section-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 <div class="container">
-    <!-- Hero section with teacher image -->
+    <!-- Hero section -->
     <div class="hero">
         <div class="hero-content">
-            <div class="teacher-img">
-                🍎👩‍🏫
-            </div>
+            <img class="teacher-img" src="https://i.pinimg.com/736x/c0/b0/45/c0b0455cca292178710730f99e727fe8.jpg" alt="Teacher with apple">
             <div class="hero-text">
                 <h1>📘 Teacher's Companion</h1>
                 <p>Handbook for future English teachers — confidence, empathy, and ready-to-use tools.</p>
@@ -261,8 +308,23 @@
         </div>
     </div>
 
-    <!-- Grid of collapsible sections -->
-    <div class="section-grid" id="sectionsGrid"></div>
+    <!-- Daily Affirmation -->
+    <div class="affirmation" id="affirmationBox">
+        <h3>✨ DAILY AFFIRMATION ✨</h3>
+        <p id="affirmationText">Loading...</p>
+    </div>
+
+    <!-- Menu Grid (all cards) -->
+    <div id="menuGrid" class="section-grid"></div>
+
+    <!-- Detail View (hidden by default, shows when card is clicked) -->
+    <div id="detailView" class="detail-view hidden">
+        <div class="detail-header">
+            <button class="back-btn" id="backToMenuBtn">← Back to menu</button>
+            <h2 id="detailTitle"></h2>
+        </div>
+        <div id="detailContent" class="detail-content"></div>
+    </div>
 
     <footer>
         🌸 You've got this, future teacher! 🌸 <br>
@@ -271,13 +333,14 @@
 </div>
 
 <script>
+    // ---------- DATA FOR EACH SECTION ----------
     const sectionsData = [
         {
+            id: "realTeacher",
             title: "🧑‍🏫 Who is a real teacher?",
-            emoji: "🧑‍🏫",
+            image: "https://img.freepik.com/premium-photo/cheerful-teacher-illustration-education-concept_990507-7358.jpg?semt=ais_hybrid&w=740&q=80",
             content: `
                 <p>A real teacher is not just someone who explains grammar rules. A real teacher is a mentor, a guide, and sometimes a friend.</p>
-                
                 <h4>🌟 10 qualities of a truly great teacher</h4>
                 <ul>
                     <li><strong>Patient</strong> — You explain the same rule 10 times without sighing. Students learn at different speeds.</li>
@@ -291,372 +354,175 @@
                     <li><strong>Observant</strong> — You notice the quiet student, the tired face, the small win.</li>
                     <li><strong>Courageous</strong> — You admit when you're wrong. You try new things even if they might fail.</li>
                 </ul>
-
-                <div class="tip-box">
-                    💡 <strong>Remember:</strong> "A good teacher is not one who gives all the answers, but one who makes students want to find them themselves."
-                </div>
-
+                <div class="tip-box">💡 <strong>Remember:</strong> "A good teacher is not one who gives all the answers, but one who makes students want to find them themselves."</div>
                 <h4>📊 Self-assessment: Which qualities do you already have?</h4>
-                <div class="table-wrap">
-                    <table>
-                        <thead><tr><th>Quality</th><th>Ask yourself</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>Patience</td><td>Do I let students finish their thoughts?</td></tr>
-                            <tr><td>Flexibility</td><td>Can I adapt when things go wrong?</td></tr>
-                            <tr><td>Empathy</td><td>Do I notice when someone is struggling?</td></tr>
-                            <tr><td>Passion</td><td>Do I genuinely enjoy teaching English?</td></tr>
-                        </tbody>
-                    </table>
-                </div>
+                <div class="table-wrap"><table><thead><tr><th>Quality</th><th>Ask yourself</th></tr></thead><tbody><tr><td>Patience</td><td>Do I let students finish their thoughts?</td></tr><tr><td>Flexibility</td><td>Can I adapt when things go wrong?</td></tr><tr><td>Empathy</td><td>Do I notice when someone is struggling?</td></tr><tr><td>Passion</td><td>Do I genuinely enjoy teaching English?</td></tr></tbody></table></div>
             `
         },
         {
+            id: "expressions",
             title: "🗣️ Classroom expressions",
-            emoji: "🗣️",
+            image: "",
             content: `
                 <p>Using the right phrases at the right time makes your classroom run smoothly. Here is a complete list of useful expressions.</p>
-
-                <h4>📌 Starting the lesson</h4>
-                <ul>
-                    <li>"Good morning/afternoon, everyone!"</li>
-                    <li>"Let's begin, please."</li>
-                    <li>"Take your seats."</li>
-                    <li>"Who is absent today?"</li>
-                    <li>"Let's warm up with a quick game."</li>
-                </ul>
-
-                <h4>📌 Giving instructions</h4>
-                <ul>
-                    <li>"Open your books to page ___."</li>
-                    <li>"Work in pairs / groups of three."</li>
-                    <li>"Listen to the audio / to me carefully."</li>
-                    <li>"Write this down in your notebooks."</li>
-                    <li>"Raise your hand if you know the answer."</li>
-                    <li>"Don't shout out — raise your hand."</li>
-                </ul>
-
-                <h4>📌 Checking understanding</h4>
-                <ul>
-                    <li>"Does anyone have any questions?"</li>
-                    <li>"Is everything clear?"</li>
-                    <li>"Can you repeat that in your own words?"</li>
-                    <li>"What do you think?"</li>
-                    <li>"Give me a thumbs up if you understand."</li>
-                </ul>
-
-                <h4>📌 Managing the classroom</h4>
-                <ul>
-                    <li>"Please be quiet for a moment."</li>
-                    <li>"Eyes on me, please."</li>
-                    <li>"One at a time."</li>
-                    <li>"Put your phones away — we're starting."</li>
-                    <li>"Let's focus, everyone."</li>
-                </ul>
-
-                <h4>📌 Encouraging students</h4>
-                <ul>
-                    <li>"Good job! That was excellent."</li>
-                    <li>"Excellent answer — well thought out."</li>
-                    <li>"Don't worry, try again. You're close."</li>
-                    <li>"You're making great progress. I see the improvement."</li>
-                    <li>"That's a really interesting point — thank you for sharing."</li>
-                    <li>"I love how you tried even though it was difficult."</li>
-                </ul>
-
-                <h4>📌 Ending the lesson</h4>
-                <ul>
-                    <li>"Let's quickly review what we learned today."</li>
-                    <li>"Your homework is ___."</li>
-                    <li>"See you next time!"</li>
-                    <li>"Have a great day, everyone."</li>
-                    <li>"Don't forget to bring ___ next lesson."</li>
-                </ul>
-
-                <div class="tip-box">
-                    💡 <strong>Pro tip:</strong> Write 5-10 key expressions on the classroom wall. Students (and you) will internalize them faster.
-                </div>
+                <h4>📌 Starting the lesson</h4><ul><li>"Good morning/afternoon, everyone!"</li><li>"Let's begin, please."</li><li>"Take your seats."</li><li>"Who is absent today?"</li></ul>
+                <h4>📌 Giving instructions</h4><ul><li>"Open your books to page ___."</li><li>"Work in pairs / groups of three."</li><li>"Listen carefully."</li><li>"Raise your hand if you know the answer."</li></ul>
+                <h4>📌 Checking understanding</h4><ul><li>"Does anyone have any questions?"</li><li>"Is everything clear?"</li><li>"Can you repeat that in your own words?"</li><li>"Give me a thumbs up if you understand."</li></ul>
+                <h4>📌 Managing the classroom</h4><ul><li>"Eyes on me, please."</li><li>"One at a time."</li><li>"Put your phones away."</li></ul>
+                <h4>📌 Encouraging students</h4><ul><li>"Good job!"</li><li>"Excellent answer!"</li><li>"Don't worry, try again."</li><li>"You're making great progress."</li></ul>
+                <h4>📌 Ending the lesson</h4><ul><li>"Let's quickly review what we learned today."</li><li>"Your homework is ___."</li><li>"See you next time!"</li></ul>
+                <div class="tip-box">💡 <strong>Pro tip:</strong> Write 5-10 key expressions on the classroom wall.</div>
             `
         },
         {
+            id: "bullying",
             title: "🛡️ Stop bullying in your class",
-            emoji: "🛡️",
+            image: "https://as1.ftcdn.net/jpg/03/35/91/22/1000_F_335912233_BaS6QWnmck70Gm4B2lhOlEcjInm3jitl.jpg",
             content: `
-                <p>Bullying destroys learning. As a teacher, you are responsible for creating a safe environment. Here's a step‑by‑step guide.</p>
-
-                <h4>✅ Step 1: Prevent it before it starts</h4>
-                <ul>
-                    <li><strong>Set clear rules from day one:</strong> "In this class, we respect everyone. No exceptions."</li>
-                    <li><strong>Build a positive classroom culture:</strong> Do team‑building activities. Celebrate acts of kindness publicly.</li>
-                    <li><strong>Model respect:</strong> Never mock a student's answer, accent, or background.</li>
-                    <li><strong>Teach emotional vocabulary:</strong> Help students name their feelings ("frustrated", "excluded", "hurt").</li>
-                </ul>
-
-                <h4>🚨 Step 2: Recognize the signs of bullying</h4>
-                <ul>
-                    <li>A student suddenly becomes quiet, anxious, or avoids certain classmates</li>
-                    <li>A student makes hurtful "jokes" repeatedly — especially about appearance, accent, or family</li>
-                    <li>A student is often "accidentally" alone during group work</li>
-                    <li>Unexplained absences or drop in grades</li>
-                    <li>Physical signs: torn clothes, missing belongings</li>
-                </ul>
-
-                <h4>⚡ Step 3: Intervene immediately (but calmly)</h4>
-                <p><strong>Do NOT say in front of everyone:</strong> "Stop bullying him!" — this makes it worse.</p>
-                <p><strong>Instead, say privately or calmly:</strong></p>
-                <ul>
-                    <li>"I noticed what you said. That wasn't kind. We don't do that here."</li>
-                    <li>"Come talk to me after class."</li>
-                    <li>"Let's pause. That comment was hurtful."</li>
-                </ul>
-
-                <h4>🤝 Step 4: Support the victim</h4>
-                <ul>
-                    <li>Talk to them privately — not in front of others</li>
-                    <li>Ask: "What would help you feel safer in class?"</li>
-                    <li>Never force them to "just ignore it" — that doesn't work</li>
-                    <li>Create a safety plan (e.g., they can sit near you, or have a signal to ask for help)</li>
-                </ul>
-
-                <h4>📋 Step 5: Work with the bully (separately)</h4>
-                <ul>
-                    <li>Don't label them a "bully" — instead: "Your words hurt someone."</li>
-                    <li>Ask: "How would you feel if someone said that to you?"</li>
-                    <li>Set clear consequences and follow through</li>
-                </ul>
-
-                <h4>🏫 Step 6: Involve parents and school administration</h4>
-                <ul>
-                    <li>Document everything — dates, exact words, actions taken</li>
-                    <li>Inform your supervisor or school counselor</li>
-                    <li>Do not try to handle severe cases alone</li>
-                </ul>
-
-                <div class="tip-box">
-                    ⚠️ <strong>Never ignore bullying.</strong> Silence is agreement. Your response shapes the entire classroom culture.
-                </div>
+                <p>Bullying destroys learning. As a teacher, you are responsible for creating a safe environment.</p>
+                <h4>✅ Step 1: Prevent it before it starts</h4><ul><li>Set clear rules: "We respect everyone."</li><li>Build a positive culture: celebrate kindness.</li><li>Model respect — never mock a student.</li></ul>
+                <h4>🚨 Step 2: Recognize the signs</h4><ul><li>Sudden quietness, anxiety, avoiding classmates</li><li>Hurtful "jokes" repeated</li><li>Unexplained absences or drop in grades</li></ul>
+                <h4>⚡ Step 3: Intervene calmly</h4><ul><li>Privately: "I noticed what you said. That wasn't kind."</li><li>Never humiliate a student in front of others.</li></ul>
+                <h4>🤝 Step 4: Support the victim</h4><ul><li>Talk privately: "What would help you feel safer?"</li><li>Create a safety plan (sit near me, use a signal).</li></ul>
+                <div class="tip-box">⚠️ <strong>Never ignore bullying.</strong> Silence is agreement.</div>
             `
         },
         {
+            id: "emotions",
             title: "🧠 When emotions overwhelm you",
-            emoji: "🧠",
+            image: "https://img.freepik.com/premium-vector/balance-anxiety-happiness-concept-emotional-intelligence-control-feeling-emotion_178888-2072.jpg?semt=ais_hybrid&w=740",
             content: `
-                <p>Teaching is emotionally intense. You will feel anxious, insecure, or exhausted sometimes. That's normal. Here's how to cope.</p>
-
-                <h4>😰 Before the lesson: fighting anxiety</h4>
-                <ul>
-                    <li><strong>"I'm not ready"</strong> → Nobody is 100% ready. You know more than your students.</li>
-                    <li><strong>"They won't listen to me"</strong> → Start with a strong voice. Fake confidence until it becomes real.</li>
-                    <li><strong>"I'll make a mistake"</strong> → You WILL make mistakes. Say "Oops, let me correct that" — students respect honesty.</li>
-                    <li><strong>"What if they laugh at me?"</strong> → Laugh with them. Humility makes you human, not weak.</li>
-                </ul>
-
-                <h4>🌿 During the lesson: if panic hits</h4>
-                <ol>
-                    <li><strong>Breathe</strong> — inhale for 4 seconds, hold for 4, exhale for 4. Repeat 3 times.</li>
-                    <li><strong>Take a pause</strong> — drink water, ask a simple question ("What day is it?"), write on the board.</li>
-                    <li><strong>Use a prepared phrase</strong> — "Give me one moment, please."</li>
-                    <li><strong>Remember</strong> — students don't see 90% of your anxiety. Only you feel it.</li>
-                </ol>
-
-                <h4>🎤 How to speak confidently in front of a large audience</h4>
-                <div class="table-wrap">
-                    <table>
-                        <thead><tr><th>Technique</th><th>Why it helps</th></tr></thead>
-                        <tbody>
-                            <tr><td>Practice out loud</td><td>Say your first 2 minutes of the lesson 5 times before class</td></tr>
-                            <tr><td>Look at foreheads, not eyes</td><td>Feels like eye contact but is less scary</td></tr>
-                            <tr><td>Hold something (pen, remote)</td><td>Gives your hands a job</td></tr>
-                            <tr><td>Move around</td><td>Walking reduces nervous energy</td></tr>
-                            <tr><td>Remember: they WANT you to succeed</td><td>Students don't want you to fail — it's awkward for everyone</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <h4>📈 How to build confidence over time</h4>
-                <ul>
-                    <li><strong>Prepare more than you think you need</strong> — over‑preparation kills anxiety</li>
-                    <li><strong>Record yourself</strong> — watch it once, then delete it. You'll see you're not as bad as you think</li>
-                    <li><strong>Start with easier classes first</strong> — build confidence gradually</li>
-                    <li><strong>Ask for feedback</strong> from a mentor, not just from your inner critic</li>
-                    <li><strong>Celebrate small wins</strong> — "Today nobody fell asleep" or "One student finally understood past tense"</li>
-                    <li><strong>Keep a "wins" journal</strong> — write down 3 good things after each lesson</li>
-                </ul>
-
-                <div class="tip-box">
-                    💪 <strong>Confidence is not "I'm perfect." Confidence is "I can handle whatever happens."</strong>
-                </div>
+                <p>Teaching is emotionally intense. You will feel anxious, insecure, or exhausted sometimes. Here's how to cope.</p>
+                <h4>😰 Before the lesson: fighting anxiety</h4><ul><li>"I'm not ready" → Nobody is 100% ready.</li><li>"They won't listen" → Start with a strong voice.</li><li>"I'll make a mistake" → Say "Oops, let me correct that" — honesty builds trust.</li></ul>
+                <h4>🌿 During the lesson: if panic hits</h4><ol><li>Breathe — 4 sec in, 4 hold, 4 out.</li><li>Take a pause — drink water, write on the board.</li><li>Use a prepared phrase: "Give me one moment, please."</li></ol>
+                <h4>🎤 Speaking confidently in front of a large audience</h4><ul><li>Practice out loud (first 2 minutes of lesson 5 times).</li><li>Look at foreheads, not eyes.</li><li>Hold something (pen, remote) to calm hands.</li><li>Move around — walking reduces nervous energy.</li></ul>
+                <div class="tip-box">💪 <strong>Confidence is not "I'm perfect." Confidence is "I can handle whatever happens."</strong></div>
             `
         },
         {
+            id: "gamesNoprep",
             title: "🎲 Extra time? No‑prep games",
-            emoji: "🎲",
+            image: "https://img.freepik.com/premium-vector/board-game-collection_23-2148698176.jpg?size=626&ext=jpg",
             content: `
                 <p>You finished 10 minutes early. Don't panic. Here are games that need ZERO preparation.</p>
-
-                <h4>⚡ Quick games (0 prep, 2-10 minutes)</h4>
-                <div class="badge-list">
-                    <span class="badge">20 Questions</span>
-                    <span class="badge">Last Letter</span>
-                    <span class="badge">Word Chain Story</span>
-                    <span class="badge">Alphabet Game</span>
-                    <span class="badge">Draw & Guess</span>
-                    <span class="badge">Two Truths, One Lie</span>
-                    <span class="badge">Stop the Bus</span>
-                    <span class="badge">Just a Minute</span>
-                    <span class="badge">Would You Rather</span>
-                </div>
-
-                <h4>📖 How to play (detailed)</h4>
-                <ul>
-                    <li><strong>20 Questions:</strong> Teacher thinks of a word (animal, object, celebrity). Students ask yes/no questions. "Is it alive?" "Is it bigger than a car?"</li>
-                    <li><strong>Last Letter:</strong> Say a word. Next student says a word starting with the last letter. (Apple → Elephant → Tiger → Rabbit). No repeats!</li>
-                    <li><strong>Word Chain Story:</strong> Each student adds one sentence to a story. "Once upon a time..." → "...there was a potato..." → "...that wanted to travel to Minsk..."</li>
-                    <li><strong>Alphabet Game:</strong> Choose a category (food, animals, verbs). Students name one item per letter A-Z. A = apple, B = banana, C = carrot...</li>
-                    <li><strong>Draw & Guess:</strong> One student draws on the board. Others guess the word in English. No letters or numbers allowed.</li>
-                    <li><strong>Two Truths, One Lie:</strong> Student says 3 statements about themselves. Class guesses the lie. "I have a cat. I've been to London. I speak French."</li>
-                    <li><strong>Stop the Bus:</strong> Draw a 4x4 grid: Name, Food, Animal, Country. Pick a random letter (e.g., "B"). Fill each column with B words. First to finish shouts "Stop the bus!"</li>
-                    <li><strong>Just a Minute:</strong> Student speaks for 1 minute on a random topic without stopping or repeating.</li>
-                    <li><strong>Would You Rather:</strong> "Would you rather lose your phone or lose your passport?" Students explain their choice.</li>
-                </ul>
-
-                <h4>🃏 Low‑prep games (1-2 minutes to set up)</h4>
-                <ul>
-                    <li><strong>Hot Seat:</strong> One student sits with back to board. Teacher writes a word. Class describes it without saying the word. "It's a vegetable. It's brown. You fry it." → "Potato!"</li>
-                    <li><strong>Role Play:</strong> Give a scenario: "You are at a hotel. Your room is dirty." Students improvise dialogue.</li>
-                    <li><strong>Find Someone Who:</strong> Students ask each other questions: "Find someone who has a pet" → name + signature. First to fill all boxes wins.</li>
-                    <li><strong>Running Dictation:</strong> Stick a short text on the wall. One student runs, reads, memorizes a sentence, runs back, and tells their partner who writes it.</li>
-                    <li><strong>Four Corners:</strong> Label corners "Agree, Disagree, Strongly agree, Strongly disagree". Read a statement. Students move to a corner and discuss why.</li>
-                </ul>
-
-                <div class="tip-box">
-                    💡 <strong>Pro tip:</strong> Keep a printed list of these games in your bag. When your brain freezes, just pull it out.
-                </div>
+                <div class="badge-list"><span class="badge">20 Questions</span><span class="badge">Last Letter</span><span class="badge">Word Chain Story</span><span class="badge">Alphabet Game</span><span class="badge">Draw & Guess</span><span class="badge">Two Truths, One Lie</span><span class="badge">Stop the Bus</span></div>
+                <ul><li><strong>20 Questions:</strong> Teacher thinks of a word. Students ask yes/no questions.</li><li><strong>Last Letter:</strong> Say a word, next student says a word starting with last letter (apple → elephant).</li><li><strong>Stop the Bus:</strong> Grid with categories (Name, Food, Animal, Country). Pick a letter, first to fill all shouts "Stop the bus!"</li><li><strong>Two Truths, One Lie:</strong> Student says 3 statements, others guess the lie.</li></ul>
+                <h4>🃏 Low‑prep games (1-2 minutes to set up)</h4><ul><li><strong>Hot Seat:</strong> One student describes a word without saying it.</li><li><strong>Role Play:</strong> Give a scenario ("At a hotel — room is dirty").</li><li><strong>Running Dictation:</strong> Stick text on wall, students run, memorize, write.</li></ul>
+                <div class="tip-box">💡 <strong>Pro tip:</strong> Keep a printed list of these games in your bag.</div>
             `
         },
         {
+            id: "gameWebsites",
             title: "🎮 Websites to create games",
-            emoji: "🎮",
+            image: "",
             content: `
-                <p>You don't need to be a programmer. These free tools let you create crosswords, word searches, bingo, and interactive quizzes in minutes.</p>
-
-                <div class="games-links">
-                    <a href="https://crosswordlabs.com/" target="_blank" class="game-link">🧩 Crossword Labs</a>
-                    <a href="https://worksheets.theteacherscorner.net/make-your-own/word-search/" target="_blank" class="game-link">🔍 Word Search Maker</a>
-                    <a href="https://www.educaplay.com/" target="_blank" class="game-link">🎮 Educaplay</a>
-                    <a href="https://www.baamboozle.com/" target="_blank" class="game-link">🎲 Baamboozle</a>
-                    <a href="https://wordwall.net/" target="_blank" class="game-link">📌 Wordwall</a>
-                    <a href="https://www.flippity.net/" target="_blank" class="game-link">🃏 Flippity</a>
-                    <a href="https://puzzel.org/" target="_blank" class="game-link">🧩 Puzzel.org</a>
-                    <a href="https://quizlet.com/" target="_blank" class="game-link">📇 Quizlet</a>
-                    <a href="https://kahoot.com/" target="_blank" class="game-link">📱 Kahoot!</a>
-                </div>
-
-                <h4>What you can create with these sites:</h4>
-                <ul>
-                    <li><strong>Crossword Labs:</strong> Custom crosswords for vocabulary review</li>
-                    <li><strong>Word Search Maker:</strong> Printable or digital word searches</li>
-                    <li><strong>Educaplay:</strong> Crosswords, fill‑in‑the‑blanks, matching, and interactive maps</li>
-                    <li><strong>Baamboozle:</strong> Team‑based quiz games with points</li>
-                    <li><strong>Wordwall:</strong> Match, maze chase, quiz show, open the box — very interactive</li>
-                    <li><strong>Flippity:</strong> Turn Google Sheets into bingo, flashcards, board games, or a random name picker</li>
-                    <li><strong>Puzzel.org:</strong> Create jigsaw puzzles, word searches, and crosswords with images</li>
-                    <li><strong>Quizlet:</strong> Flashcards, learn mode, and live team games</li>
-                    <li><strong>Kahoot:</strong> Fast‑paced quiz games students play on their phones</li>
-                </ul>
-
-                <div class="tip-box">
-                    💡 <strong>My recommendation:</strong> Start with <strong>Wordwall</strong> (easiest) and <strong>Baamboozle</strong> (most fun). Both have free tiers that work perfectly for classrooms.
-                </div>
-
-                <h4>🎯 Quick idea: Combine games</h4>
-                <p>Create a crossword on Crossword Labs as homework. Then use the same vocabulary to play Baamboozle in the next lesson. Students learn twice without getting bored.</p>
+                <p>These free tools let you create crosswords, word searches, bingo, and interactive quizzes in minutes.</p>
+                <div class="games-links"><a href="https://crosswordlabs.com/" target="_blank" class="game-link">🧩 Crossword Labs</a><a href="https://worksheets.theteacherscorner.net/make-your-own/word-search/" target="_blank" class="game-link">🔍 Word Search Maker</a><a href="https://www.educaplay.com/" target="_blank" class="game-link">🎮 Educaplay</a><a href="https://www.baamboozle.com/" target="_blank" class="game-link">🎲 Baamboozle</a><a href="https://wordwall.net/" target="_blank" class="game-link">📌 Wordwall</a><a href="https://www.flippity.net/" target="_blank" class="game-link">🃏 Flippity</a><a href="https://quizlet.com/" target="_blank" class="game-link">📇 Quizlet</a><a href="https://kahoot.com/" target="_blank" class="game-link">📱 Kahoot!</a></div>
+                <div class="tip-box">💡 <strong>My recommendation:</strong> Start with Wordwall (easiest) and Baamboozle (most fun).</div>
             `
         },
         {
+            id: "emergencyKit",
             title: "📦 Your emergency kit + last words",
-            emoji: "📦",
+            image: "",
             content: `
                 <p>Be prepared. Keep these items in your bag or on your desk at all times.</p>
-
-                <h4>🎒 Physical items</h4>
-                <ul>
-                    <li><strong>Water bottle</strong> — to take a pause and breathe</li>
-                    <li><strong>List of 5 no‑prep games</strong> — printed, for when your brain freezes</li>
-                    <li><strong>Small notebook</strong> — to write down what went well / badly after each lesson</li>
-                    <li><strong>One printed short story or article</strong> — for unexpected 15 minutes of silence</li>
-                    <li><strong>Small stress ball</strong> — to squeeze when you feel overwhelmed</li>
-                    <li><strong>Spare pens and paper</strong> — for students who "forget" them</li>
-                    <li><strong>Mints or gum</strong> — dry mouth is real when you're nervous</li>
-                </ul>
-
-                <h4>🧠 Mental kit</h4>
-                <ul>
-                    <li><strong>The 4‑4‑4 breathing trick:</strong> Inhale 4 sec → hold 4 sec → exhale 4 sec</li>
-                    <li><strong>One kind sentence to yourself:</strong> "I am learning to teach. That's enough for today."</li>
-                    <li><strong>The "good enough" rule:</strong> Perfect lessons don't exist. Aim for "good enough."</li>
-                </ul>
-
-                <div class="tip-box">
-                    🌟 <strong>Last words to remember:</strong><br><br>
-                    You will have bad lessons. You will have days when nothing works. You will feel like a fraud sometimes.<br><br>
-                    <strong>That is normal.</strong><br><br>
-                    Every experienced teacher started exactly where you are now — scared, excited, and unsure.<br><br>
-                    The fact that you are reading this means you already care. And caring is the most important quality of all.<br><br>
-                    💬 <em>"The best teachers are not perfect. The best teachers never stop trying to be better."</em><br><br>
-                    <strong>Good luck, future English teacher. You've got this.</strong>
-                </div>
+                <h4>🎒 Physical items</h4><ul><li>Water bottle — to take a pause</li><li>List of 5 no‑prep games — printed</li><li>Small notebook — to reflect after lessons</li><li>One printed short story — for unexpected silence</li><li>Small stress ball</li><li>Spare pens and paper</li></ul>
+                <div class="tip-box">🌟 <strong>Last words:</strong> You will have bad lessons. That is normal. Every experienced teacher started where you are now — scared, excited, and unsure. Caring is the most important quality. You've got this.</div>
             `
         }
     ];
 
-    // Build the grid with accordion behaviour (only one open at a time)
-    const gridContainer = document.getElementById("sectionsGrid");
+    // ---------- DAILY AFFIRMATIONS ----------
+    const affirmations = [
+        "You are capable of more than you know. 🌟",
+        "Today, you will make a difference in someone's life. 💫",
+        "Mistakes are proof that you are trying. Keep going! 💪",
+        "Your students are lucky to have you. ✨",
+        "One small positive thought can change your whole day. 🧡",
+        "You don't have to be perfect. You just have to be present. 🌸",
+        "Every expert was once a beginner. 📚",
+        "Your energy matters. Show up as YOU. 🦋",
+        "Some days you'll inspire them; other days they'll inspire you. 🤝",
+        "Breathe. You've got this. 🧘‍♀️"
+    ];
 
-    function buildAccordion() {
+    function setDailyAffirmation() {
+        const today = new Date().toDateString();
+        const stored = localStorage.getItem("teacherAffirmationDate");
+        let affirmation;
+        if (stored === today) {
+            affirmation = localStorage.getItem("teacherAffirmationText");
+        } else {
+            const randomIndex = Math.floor(Math.random() * affirmations.length);
+            affirmation = affirmations[randomIndex];
+            localStorage.setItem("teacherAffirmationDate", today);
+            localStorage.setItem("teacherAffirmationText", affirmation);
+        }
+        document.getElementById("affirmationText").innerText = affirmation;
+    }
+
+    // ---------- RENDER MENU (card grid) ----------
+    const menuGrid = document.getElementById("menuGrid");
+    const detailView = document.getElementById("detailView");
+    const menuGridContainer = document.getElementById("menuGrid");
+
+    function renderMenu() {
+        menuGrid.innerHTML = "";
         sectionsData.forEach((section, idx) => {
             const card = document.createElement("div");
             card.className = "card";
-
-            const header = document.createElement("div");
-            header.className = "card-header";
-            header.innerHTML = `
-                <div style="display: flex; align-items: center; gap: 12px;">
-                    <span class="emoji">${section.emoji}</span>
-                    <span>${section.title}</span>
+            card.onclick = () => openDetail(section.id);
+            
+            // Use custom image if provided, else fallback emoji
+            let leftIcon = "";
+            if (section.image && section.image !== "") {
+                leftIcon = `<img class="emoji-img" src="${section.image}" alt="icon">`;
+            } else {
+                leftIcon = `<span style="font-size: 2rem;">${section.title.charAt(0)}</span>`;
+            }
+            
+            card.innerHTML = `
+                <div class="card-header">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        ${leftIcon}
+                        <span>${section.title}</span>
+                    </div>
+                    <span class="toggle-icon">📖</span>
                 </div>
-                <span class="toggle-icon">▼</span>
             `;
-
-            const contentDiv = document.createElement("div");
-            contentDiv.className = "card-content";
-            contentDiv.innerHTML = section.content;
-
-            header.addEventListener("click", () => {
-                const isCurrentlyOpen = contentDiv.classList.contains("show");
-                
-                // Close ALL open sections
-                document.querySelectorAll(".card-content").forEach(cont => {
-                    cont.classList.remove("show");
-                    const prevHeader = cont.previousElementSibling;
-                    if (prevHeader) prevHeader.querySelector(".toggle-icon").textContent = "▼";
-                });
-                
-                // If it wasn't open before, open this one
-                if (!isCurrentlyOpen) {
-                    contentDiv.classList.add("show");
-                    const icon = header.querySelector(".toggle-icon");
-                    icon.textContent = "▲";
-                }
-            });
-
-            card.appendChild(header);
-            card.appendChild(contentDiv);
-            gridContainer.appendChild(card);
+            menuGrid.appendChild(card);
         });
     }
 
-    buildAccordion();
+    // Open detail view (full screen mode)
+    function openDetail(id) {
+        const section = sectionsData.find(s => s.id === id);
+        if (!section) return;
+        
+        document.getElementById("detailTitle").innerHTML = section.title;
+        document.getElementById("detailContent").innerHTML = section.content;
+        
+        // Hide menu grid, show detail view
+        menuGrid.classList.add("hidden");
+        detailView.classList.remove("hidden");
+        
+        // Scroll to top
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    // Back to menu
+    function backToMenu() {
+        menuGrid.classList.remove("hidden");
+        detailView.classList.add("hidden");
+    }
+
+    // Event listeners
+    document.getElementById("backToMenuBtn").addEventListener("click", backToMenu);
+
+    // Initialize page
+    renderMenu();
+    setDailyAffirmation();
 </script>
 </body>
 </html>
