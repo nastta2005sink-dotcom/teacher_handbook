@@ -24,6 +24,7 @@
             margin: 0 auto;
         }
 
+        /* Hero section */
         .hero {
             background: #ffffffcc;
             backdrop-filter: blur(8px);
@@ -65,6 +66,7 @@
             color: #8b6b64;
         }
 
+        /* Daily Affirmation */
         .affirmation {
             background: #fff0ec;
             border-radius: 60px;
@@ -88,6 +90,7 @@
             font-weight: 500;
         }
 
+        /* Menu grid */
         .section-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -123,7 +126,7 @@
             color: #c26b5e;
         }
 
-        .card-header .emoji-img {
+        .card-header img {
             width: 44px;
             height: 44px;
             object-fit: cover;
@@ -135,6 +138,7 @@
             color: #e8a99c;
         }
 
+        /* Detail view */
         .detail-view {
             background: #fffefa;
             border-radius: 48px;
@@ -179,6 +183,13 @@
             font-size: 1rem;
             line-height: 1.6;
             color: #5a403c;
+        }
+
+        .detail-content img {
+            max-width: 100%;
+            border-radius: 32px;
+            margin: 20px 0;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         }
 
         .detail-content h4 {
@@ -243,30 +254,6 @@
             transform: scale(1.02);
         }
 
-        .table-wrap {
-            overflow-x: auto;
-            margin: 15px 0;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: #fff9f5;
-            border-radius: 20px;
-            overflow: hidden;
-        }
-
-        th, td {
-            padding: 10px 12px;
-            text-align: left;
-            border-bottom: 1px solid #ffe0da;
-        }
-
-        th {
-            background: #ffe0da;
-            color: #b95c4e;
-        }
-
         .hidden {
             display: none;
         }
@@ -327,8 +314,10 @@
         {
             id: "realTeacher",
             title: "Who is a real teacher?",
-            image: "https://img.freepik.com/premium-photo/cheerful-teacher-illustration-education-concept_990507-7358.jpg?semt=ais_hybrid&w=740&q=80",
+            cardImage: "https://cdn.vectorstock.com/i/500p/16/58/blonde-superhero-kid-with-red-cape-vector-51921658.jpg",
+            detailImage: "https://cdn.vectorstock.com/i/500p/16/58/blonde-superhero-kid-with-red-cape-vector-51921658.jpg",
             content: `
+                <img src="https://cdn.vectorstock.com/i/500p/16/58/blonde-superhero-kid-with-red-cape-vector-51921658.jpg" alt="Superhero teacher">
                 <p>A real teacher is not just someone who explains grammar rules. A real teacher is a mentor, a guide, and sometimes a friend.</p>
                 <h4>10 qualities of a truly great teacher</h4>
                 <ul>
@@ -349,8 +338,10 @@
         {
             id: "expressions",
             title: "Classroom expressions",
-            image: "",
+            cardImage: "https://i.ytimg.com/vi/5Sc0a0lp0_8/maxresdefault.jpg",
+            detailImage: "https://i.ytimg.com/vi/5Sc0a0lp0_8/maxresdefault.jpg",
             content: `
+                <img src="https://i.ytimg.com/vi/5Sc0a0lp0_8/maxresdefault.jpg" alt="Classroom expressions">
                 <p>Using the right phrases at the right time makes your classroom run smoothly. Here is a complete list of useful expressions.</p>
                 <h4>Starting the lesson</h4><ul><li>"Good morning/afternoon, everyone!"</li><li>"Let's begin, please."</li><li>"Take your seats."</li><li>"Who is absent today?"</li></ul>
                 <h4>Giving instructions</h4><ul><li>"Open your books to page ___."</li><li>"Work in pairs / groups of three."</li><li>"Listen carefully."</li><li>"Raise your hand if you know the answer."</li></ul>
@@ -364,8 +355,10 @@
         {
             id: "bullying",
             title: "Stop bullying in your class",
-            image: "https://as1.ftcdn.net/jpg/03/35/91/22/1000_F_335912233_BaS6QWnmck70Gm4B2lhOlEcjInm3jitl.jpg",
+            cardImage: "https://i.ytimg.com/vi/ctlcuG-m0xk/maxres2.jpg",
+            detailImage: "https://i.ytimg.com/vi/ctlcuG-m0xk/maxres2.jpg",
             content: `
+                <img src="https://i.ytimg.com/vi/ctlcuG-m0xk/maxres2.jpg" alt="Stop bullying">
                 <p>Bullying destroys learning. As a teacher, you are responsible for creating a safe environment.</p>
                 <h4>Step 1: Prevent it before it starts</h4><ul><li>Set clear rules: "We respect everyone."</li><li>Build a positive culture: celebrate kindness.</li><li>Model respect — never mock a student.</li></ul>
                 <h4>Step 2: Recognize the signs</h4><ul><li>Sudden quietness, anxiety, avoiding classmates</li><li>Hurtful "jokes" repeated</li><li>Unexplained absences or drop in grades</li></ul>
@@ -377,8 +370,10 @@
         {
             id: "emotions",
             title: "When emotions overwhelm you",
-            image: "https://img.freepik.com/premium-vector/balance-anxiety-happiness-concept-emotional-intelligence-control-feeling-emotion_178888-2072.jpg?semt=ais_hybrid&w=740",
+            cardImage: "https://i.ytimg.com/vi/_YmvnAFW9Qw/maxresdefault.jpg",
+            detailImage: "https://i.ytimg.com/vi/_YmvnAFW9Qw/maxresdefault.jpg",
             content: `
+                <img src="https://i.ytimg.com/vi/_YmvnAFW9Qw/maxresdefault.jpg" alt="Emotional balance">
                 <p>Teaching is emotionally intense. You will feel anxious, insecure, or exhausted sometimes. Here's how to cope.</p>
                 <h4>Before the lesson: fighting anxiety</h4><ul><li>"I'm not ready" → Nobody is 100% ready.</li><li>"They won't listen" → Start with a strong voice.</li><li>"I'll make a mistake" → Say "Oops, let me correct that" — honesty builds trust.</li></ul>
                 <h4>During the lesson: if panic hits</h4><ol><li>Breathe — 4 sec in, 4 hold, 4 out.</li><li>Take a pause — drink water, write on the board.</li><li>Use a prepared phrase: "Give me one moment, please."</li></ol>
@@ -389,8 +384,10 @@
         {
             id: "gamesNoprep",
             title: "Extra time? No‑prep games",
-            image: "https://img.freepik.com/premium-vector/board-game-collection_23-2148698176.jpg?size=626&ext=jpg",
+            cardImage: "https://i.ytimg.com/vi/weEF_vW0eto/maxresdefault.jpg",
+            detailImage: "https://i.ytimg.com/vi/weEF_vW0eto/maxresdefault.jpg",
             content: `
+                <img src="https://i.ytimg.com/vi/weEF_vW0eto/maxresdefault.jpg" alt="No-prep games">
                 <p>You finished 10 minutes early. Don't panic. Here are games that need ZERO preparation.</p>
                 <div class="badge-list"><span class="badge">20 Questions</span><span class="badge">Last Letter</span><span class="badge">Word Chain Story</span><span class="badge">Alphabet Game</span><span class="badge">Draw & Guess</span><span class="badge">Two Truths, One Lie</span><span class="badge">Stop the Bus</span></div>
                 <ul><li><strong>20 Questions:</strong> Teacher thinks of a word. Students ask yes/no questions.</li><li><strong>Last Letter:</strong> Say a word, next student says a word starting with last letter (apple → elephant).</li><li><strong>Stop the Bus:</strong> Grid with categories (Name, Food, Animal, Country). Pick a letter, first to fill all shouts "Stop the bus!"</li><li><strong>Two Truths, One Lie:</strong> Student says 3 statements, others guess the lie.</li></ul>
@@ -401,8 +398,10 @@
         {
             id: "gameWebsites",
             title: "Websites to create games",
-            image: "",
+            cardImage: "https://www.meme-arsenal.com/memes/bcdd88732dc415554cc14308a84d947c.jpg",
+            detailImage: "https://www.meme-arsenal.com/memes/bcdd88732dc415554cc14308a84d947c.jpg",
             content: `
+                <img src="https://www.meme-arsenal.com/memes/bcdd88732dc415554cc14308a84d947c.jpg" alt="Game websites">
                 <p>These free tools let you create crosswords, word searches, bingo, and interactive quizzes in minutes.</p>
                 <div class="games-links">
                     <a href="https://crosswordlabs.com/" target="_blank" class="game-link">Crossword Labs</a>
@@ -418,9 +417,12 @@
         },
         {
             id: "emergencyKit",
-            title: "Your emergency kit + last words",
-            image: "",
+            title: "Your emergency kit",
+            cardImage: "https://i.imgflip.com/6k3w60.jpg",
+            detailImage: "https://i.imgflip.com/6k3w60.jpg",
             content: `
+                <img src="https://i.imgflip.com/6k3w60.jpg" alt="Emergency kit">
+                <img src="https://ir.ozone.ru/s3/multimedia-a/6086601466.jpg" alt="Emergency kit box" style="margin-top: 10px;">
                 <p>Be prepared. Keep these items in your bag or on your desk at all times.</p>
                 <h4>Physical items</h4><ul><li>Water bottle — to take a pause</li><li>List of 5 no‑prep games — printed</li><li>Small notebook — to reflect after lessons</li><li>One printed short story — for unexpected silence</li><li>Small stress ball</li><li>Spare pens and paper</li></ul>
                 <div class="tip-box">🌟 <strong>Last words:</strong> You will have bad lessons. That is normal. Every experienced teacher started where you are now — scared, excited, and unsure. Caring is the most important quality. You've got this.</div>
@@ -428,6 +430,7 @@
         }
     ];
 
+    // Daily affirmations
     const affirmations = [
         "You are capable of more than you know.",
         "Today, you will make a difference in someone's life.",
@@ -464,17 +467,10 @@
             card.className = "card";
             card.onclick = () => openDetail(section.id);
             
-            let leftIcon = "";
-            if (section.image && section.image !== "") {
-                leftIcon = `<img class="emoji-img" src="${section.image}" alt="icon">`;
-            } else {
-                leftIcon = `<span style="font-size: 2rem;">❤️</span>`;
-            }
-            
             card.innerHTML = `
                 <div class="card-header">
                     <div style="display: flex; align-items: center; gap: 12px;">
-                        ${leftIcon}
+                        <img src="${section.cardImage}" alt="icon" onerror="this.src='https://via.placeholder.com/44?text=📚'">
                         <span>${section.title}</span>
                     </div>
                     <span class="toggle-icon">❤️</span>
